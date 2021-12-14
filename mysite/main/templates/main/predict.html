@@ -1,0 +1,12 @@
+{%extends 'main/base.html' %}
+
+{%block title%} Predict Grade {%endblock %}
+
+{%block content%} 
+Predict Page
+<form method="POST" action = "/predict/" enctype= multipart/form-data>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" value="Submit"> submit </button>
+</form>
+{%endblock %}
