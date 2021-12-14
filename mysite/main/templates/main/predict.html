@@ -3,7 +3,7 @@
 {%block title%} Predict Grade {%endblock %}
 
 {%block content%} 
-Predict Page
+Predict Page: Please upload a csv with column titles [["G1", "G2", "studytime", "failures", "absences"]], and use g1 and g2 as a number between 1 to 20 
 <form method="POST" action = "/predict/" enctype= multipart/form-data>
     {% csrf_token %}
     {{ form.as_p }}
