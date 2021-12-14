@@ -5,5 +5,4 @@ class CreateNewList(forms.Form):
     check = forms.BooleanField(required = False)
 
 class UploadFileForm(forms.Form):
-    title = forms.CharField(label = "input file", max_length=50)
     file = forms.FileField()
