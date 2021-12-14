@@ -6,7 +6,7 @@ from .models import ToDoList, Item
 from .forms import CreateNewList, UploadFileForm
 import pandas as pd
 from .ml import getResult
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 # Create your views here.
 
 def index(response, id):
@@ -20,7 +20,7 @@ def index(response, id):
 def intTest(response, id):
     return HttpResponse("<h1>%s</h1>" % id)
 
-@csrf_protect
+@csrf_exempt
 def predict(request):
     if request.method == "POST":
         form = UploadFileForm(request.POST, request.FILES)
@@ -45,7 +45,7 @@ def test(response):
 def home(response):
     return render(response, "main/home.html", {})
 
-@csrf_protect
+@csrf_exempt
 def create(response):
     if response.method == "POST":
         form = CreateNewList(response.POST)
