@@ -24,9 +24,7 @@ def intTest(response, id):
 def predict(request):
     if request.method == "POST":
         form = UploadFileForm(request.POST, request.FILES)
-        print("massive success")
         if form.is_valid():
-            print("valid")
             file = request.FILES['file']   
             data = pd.read_csv(file)
             result = getResult(data)
@@ -37,7 +35,6 @@ def predict(request):
         else:
             print(form._errors)
     else:
-        print("failed")
         form = UploadFileForm() 
     return render(request, "main/predict.html", {"form":form})
 def test(response):

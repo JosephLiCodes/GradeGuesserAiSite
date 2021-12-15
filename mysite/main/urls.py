@@ -7,6 +7,7 @@ urlpatterns = [
     
     path("test",views.test, name = "test"),
     path("<int:id>", views.index, name = "index"),
+    path("home/", views.home, name = "home"),
      #looks for int, and passes it into index
     #path("<int:id>", views.intTest, name = "id"),
     path("",views.home, name = "home"),

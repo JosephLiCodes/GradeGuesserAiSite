@@ -3,7 +3,10 @@
 {%block title%} Predict Grade {%endblock %}
 
 {%block content%} 
-Predict Page: Please upload a csv with column titles [["G1", "G2", "studytime", "failures", "absences"]], and use g1 and g2 as a number between 1 to 20 
+<h2> How to use: </h2>
+<p>Predict Page: Please upload a csv with column titles [["G1", "G2", "studytime", "failures", "absences"]], and use G1 and G2 as a score out of 20 for your previous 2 midterms or tests. e.g. 10</p>
+<h2> How it Works: </h2>
+<p>This prediction uses sci-kit learn to create a linear regression model based on data provided by UCI. The trained model is uploaded to the django project and will take your user input and use it to predict what final grade you will get. You will recieve a score out of 20, and you can use this to determine what grade you will get on your final!</p>
 <form method="POST" action = "/predict/" enctype= multipart/form-data>
     {% csrf_token %}
     {{ form.as_p }}
