@@ -22,7 +22,7 @@
 
 ## About the Project
 
-The grade guesser AI website is a website using django that hosts a self created machine learning model to predict the grade that will be received on a users final exam. 
+The grade guesser AI website is a website using django that hosts a self created machine learning model to predict the grade that will be received on a users final exam. The model used can be found here: (https://github.com/JosephLiCodes/UCI-Grade-prediction)
  
 
  
